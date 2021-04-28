@@ -5,7 +5,7 @@
       "Http": {
         "IsEnabled": true,
         "Address": "0.0.0.0",
-        "Port": "801"
+        "Port": "80"
       },
       "Https": {
         "IsEnabled": false,
