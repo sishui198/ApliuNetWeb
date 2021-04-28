@@ -1,0 +1,78 @@
+﻿{
+  /*Kestrel配置Host Url信息,同时支持HTTPS和HTTP*/
+  "HostUrl": {
+    "Endpoints": {
+      "Http": {
+        "IsEnabled": true,
+        "Address": "0.0.0.0",
+        "Port": "801"
+      },
+      "Https": {
+        "IsEnabled": false,
+        "Address": "0.0.0.0",
+        "Port": "443",
+        "Certificate": {
+          "Source": "File",
+          "Path": "1/1",
+          "Password": "1"
+        }
+      }
+    }
+  },
+
+  /*网站域名*/
+  "Domain": "",
+
+  /*是否开启HTTPS重定向服务*/
+  "IsUseHttps": false,
+
+  "AllEncodingAESKey": "11111",
+
+
+  /*业务数据库类型: SqlServer / Oracle / Mysql */
+  "DatabaseType": "Mysql",
+  "DatabaseIp": "0/pPnu/lxsxElV5tajXdDQ==",
+  "DatabaseName": "apliunetweb",
+  "DatabaseUserName": "apliu",
+  "DatabasePassword": "+HMYHJxTEX4=",
+
+  /*
+    Public:
+        "DatabaseConnection": "Data Source=1;Database=1;User ID=1;Password=1",
+        "TesDatabaseConnection": "Data Source=1;Database=1;User ID=1;Password=1",
+    Debug:
+        "DatabaseConnection": "Data Source=1;Database=1;User ID=1;Password=1",
+        "TesDatabaseConnection": "Data Source=1;Database=1;User ID=1;Password=1",
+    */
+
+  /*各类业务数据*/
+  "AppSettings": {
+    /*演示数据库*/
+    "TestDatabaseType": "Mysql",
+    "TestDatabaseIp": "0/pPnu/lxsxElV5tajXdDQ==",
+    "TestDatabaseName": "apliunetweb",
+    "TestDatabaseUserName": "apliu",
+    "TestDatabasePassword": "+HMYHJxTEX4=",
+
+    /*Session加密秘钥*/
+    "SessionSecurityKey": "1",
+
+    /*微信公众号绑定域名*/
+    "WxDomain": "",
+    "WxAppId": "1",
+    "WxAppSecret": "1",
+    "WxToken": "1",
+    "IsSecurity": "true", //已更改至由微信公众号设置决定是否启用加密，故此字段暂未使用（已过期）
+    "WxEncodingAESKey": "1",
+
+    /*腾讯云ID*/
+    "TcAppId": "1",
+    "TcSecretId": "1",
+    "TcSecretKey": "1",
+
+    /*SDK AppID是短信应用的唯一标识，调用短信API接口时需要提供该参数*/
+    "TcSMSAppId": "1",
+    /*用来校验短信发送请求合法性的密码，与SDK AppID对应*/
+    "TcSMSAppKey": "1"
+  }
+}
