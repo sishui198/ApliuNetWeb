@@ -26,9 +26,6 @@
   /*是否开启HTTPS重定向服务*/
   "IsUseHttps": false,
 
-  "AllEncodingAESKey": "11111",
-
-
   /*业务数据库类型: SqlServer / Oracle / Mysql */
   "DatabaseType": "Mysql",
   "DatabaseIp": "0/pPnu/lxsxElV5tajXdDQ==",

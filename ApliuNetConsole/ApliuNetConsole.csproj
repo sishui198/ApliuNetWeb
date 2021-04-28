@@ -12,7 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Database\Apliu.Database.MongoDB\Apliu.Database.MongoDb.csproj" />
+    <ProjectReference Include="..\Database\Apliu.Database.Mysql\Apliu.Database.Mysql.csproj" />
+    <ProjectReference Include="..\Database\Apliu.Database.OleDb\Apliu.Database.OleDb.csproj" />
+    <ProjectReference Include="..\Database\Apliu.Database.Oracle\Apliu.Database.Oracle.csproj" />
     <ProjectReference Include="..\Database\Apliu.Database.ORM\Apliu.Database.ORM.csproj" />
+    <ProjectReference Include="..\Database\Apliu.Database.SqlServer\Apliu.Database.SqlServer.csproj" />
     <ProjectReference Include="..\Database\Apliu.Database\Apliu.Database.csproj" />
     <ProjectReference Include="..\Tools\Apliu.Tools\Apliu.Tools.csproj" />
     <ProjectReference Include="..\WeChat\Apliu.WeChat\Apliu.WeChat.csproj" />
