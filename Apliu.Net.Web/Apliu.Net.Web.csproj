@@ -30,4 +30,10 @@
     <ProjectReference Include="..\Apliu.Tools\Apliu.Tools.Core\Apliu.Tools.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Config\key.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
