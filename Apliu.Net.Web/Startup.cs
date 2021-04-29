@@ -1,4 +1,4 @@
-using Apliu.Tools;
+using Apliu.Tools.Core;
 using ApliuCoreWeb.Models;
 using ApliuCoreWeb.Models.WeChat;
 using log4net;
@@ -49,7 +49,7 @@ namespace Apliu.Net.Web
                 options.Cookie.HttpOnly = true;
             });
 
-            Apliu.Tools.Logger.WriteLogWeb("Services Configure 配置完成");
+            Apliu.Tools.Core.Logger.WriteLogWeb("Services Configure 配置完成");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,7 +70,7 @@ namespace Apliu.Net.Web
             if (ConfigurationJson.IsUseHttps)
             {
                 app.UseHttpsRedirection();
-                Apliu.Tools.Logger.WriteLogWeb("开启请求重定向到HTTPS的服务");
+                Apliu.Tools.Core.Logger.WriteLogWeb("开启请求重定向到HTTPS的服务");
             }
 
             app.UseStaticFiles();
@@ -112,7 +112,7 @@ namespace Apliu.Net.Web
             //        template: "{controller=Home}/{action=Index}/{id?}");
             //});
 
-            Apliu.Tools.Logger.WriteLogWeb("App Configure 配置完成");
+            Apliu.Tools.Core.Logger.WriteLogWeb("App Configure 配置完成");
 
             //启动自定义初始化事件
             UserDefinedStartup();
@@ -125,13 +125,13 @@ namespace Apliu.Net.Web
         {
             try
             {
-                Apliu.Tools.Logger.WriteLogWeb("开始执行自定义初始化事件");
+                Apliu.Tools.Core.Logger.WriteLogWeb("开始执行自定义初始化事件");
 
                 //加载配置文件
                 ConfigurationJson.LoadConfig();
 
                 //初始化程序跟目录
-                ApliuCoreWeb.Models.Common.RootDirectory = Apliu.Tools.Web.ServerInfo.SitePath + @"\";
+                ApliuCoreWeb.Models.Common.RootDirectory = Apliu.Tools.Core.Web.ServerInfo.SitePath + @"\";
 
                 //启动access_token管理任务
                 WxTokenManager.TokenTaskStart();
@@ -147,8 +147,10 @@ namespace Apliu.Net.Web
 
                 //初始化数据库
                 var sqls = File.ReadAllText("Config/MysqlDatabaseInitScript.txt").Split(";", StringSplitOptions.RemoveEmptyEntries);
+                Console.WriteLine("开始初始化数据库结构");
                 foreach (var s in sqls)
                 {
+                    Console.Write("*");
                     if (!DataAccess.Instance.PostData(s))
                     {
                         Console.WriteLine("-------------------------初始化数据库失败-----------------------------");
@@ -156,12 +158,13 @@ namespace Apliu.Net.Web
                         Console.WriteLine("----------------------------------------------------------------------");
                     }
                 }
+                Console.WriteLine("");
 
-                Apliu.Tools.Logger.WriteLogWeb("自定义初始化事件执行完成");
+                Apliu.Tools.Core.Logger.WriteLogWeb("自定义初始化事件执行完成");
             }
             catch (System.Exception ex)
             {
-                Apliu.Tools.Logger.WriteLogWeb("自定义初始化事件执行失败，详情：" + ex.Message);
+                Apliu.Tools.Core.Logger.WriteLogWeb("自定义初始化事件执行失败，详情：" + ex.Message);
             }
         }
     }

@@ -1,5 +1,5 @@
 ﻿using Apliu.Standard.ORM;
-using Apliu.Tools;
+using Apliu.Tools.Core;
 using System;
 
 namespace ApliuCoreWeb.Models.WeChat

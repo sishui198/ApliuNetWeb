@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Apliu.Tools.Web
+namespace Apliu.Tools.Core.Web
 {
     public class ResponseMessage
     {

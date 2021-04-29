@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace Apliu.WeChat.Helper
+namespace Apliu.WeChat.Core.Helper
 {
     public class OtherUtils
     {

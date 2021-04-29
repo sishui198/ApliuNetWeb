@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.IO;
 
-namespace Apliu.Tools
+namespace Apliu.Tools.Core
 {
     public class QRCode
     {

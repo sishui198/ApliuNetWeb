@@ -1,7 +1,7 @@
-﻿using Apliu.WeChat.Modal.Request;
+﻿using Apliu.WeChat.Core.Modal.Request;
 using System;
 
-namespace Apliu.WeChat.Modal
+namespace Apliu.WeChat.Core.Modal
 {
     /// <summary>
     /// 请求好友时的信息

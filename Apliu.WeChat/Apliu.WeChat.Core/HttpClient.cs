@@ -6,7 +6,7 @@ using System.IO;
 using System.Net;
 using System.Threading;
 
-namespace Apliu.WeChat.Helper
+namespace Apliu.WeChat.Core.Helper
 {
     public class FormDataItem
     {

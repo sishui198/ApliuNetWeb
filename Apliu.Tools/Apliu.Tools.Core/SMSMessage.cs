@@ -1,10 +1,10 @@
-﻿using Apliu.Tools.Web;
+﻿using Apliu.Tools.Core.Web;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Text;
 
-namespace Apliu.Tools
+namespace Apliu.Tools.Core
 {
     public interface ISMSMessage
     {

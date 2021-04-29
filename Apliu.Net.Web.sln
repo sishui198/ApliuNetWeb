@@ -29,11 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Core", "Apliu.Common\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{98F05E7A-63FE-4912-B770-6A08D079760A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Tools", "Apliu.Tools\Apliu.Tools.Core\Apliu.Tools.csproj", "{BF399BE2-47F2-4159-99D6-C3542274E06D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Tools.Core", "Apliu.Tools\Apliu.Tools.Core\Apliu.Tools.Core.csproj", "{BF399BE2-47F2-4159-99D6-C3542274E06D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeChat", "WeChat", "{C2419D8C-63E5-45F3-9F1C-A8EF0A1CD3A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.WeChat", "Apliu.WeChat\Apliu.WeChat.Core\Apliu.WeChat.csproj", "{E73EC391-AA33-49BF-9221-DAE72ECE0FB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.WeChat.Core", "Apliu.WeChat\Apliu.WeChat.Core\Apliu.WeChat.Core.csproj", "{E73EC391-AA33-49BF-9221-DAE72ECE0FB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

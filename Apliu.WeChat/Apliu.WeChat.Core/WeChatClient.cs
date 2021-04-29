@@ -1,12 +1,12 @@
-﻿using Apliu.WeChat.Helper;
-using Apliu.WeChat.Modal;
-using Apliu.WeChat.Modal.Response;
+﻿using Apliu.WeChat.Core.Helper;
+using Apliu.WeChat.Core.Modal;
+using Apliu.WeChat.Core.Modal.Response;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
-namespace Apliu.WeChat
+namespace Apliu.WeChat.Core
 {
     public class WeChatClient
     {

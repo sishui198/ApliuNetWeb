@@ -1,4 +1,4 @@
-﻿namespace Apliu.WeChat.Modal.Request
+﻿namespace Apliu.WeChat.Core.Modal.Request
 {
 
     class UpdateChatRoomRequest

@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Apliu.Tools
+namespace Apliu.Tools.Core
 {
     public static class DataConvert
     {

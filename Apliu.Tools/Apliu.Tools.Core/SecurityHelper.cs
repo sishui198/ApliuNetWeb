@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace Apliu.Tools
+namespace Apliu.Tools.Core
 {
     public class SecurityHelper
     {

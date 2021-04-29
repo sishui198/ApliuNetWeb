@@ -1,4 +1,4 @@
-﻿using Apliu.Tools;
+﻿using Apliu.Tools.Core;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,8 +15,8 @@ namespace ApliuCoreWeb.Controllers
         {
             return QRCode.CreateCodeSimpleByte("dd");
             /*String result = "result";
-            Apliu.Tools.Logger.WriteLogWeb("11111");
-            Apliu.Tools.Logger.WriteLogWeb("22222");
+            Apliu.Tools.Core.Logger.WriteLogWeb("11111");
+            Apliu.Tools.Core.Logger.WriteLogWeb("22222");
             return result;
             Apliu.Core.Database.DatabaseType databaseType = (Apliu.Core.Database.DatabaseType)Enum.Parse(typeof(Apliu.Core.Database.DatabaseType), AppsettingJson.GetuUserDefinedSetting("DatabaseType"));
             UserConnectionString userConnectionString = AppsettingJson.GetSetting<UserConnectionString>("ConnectionString", "userdefined.json");

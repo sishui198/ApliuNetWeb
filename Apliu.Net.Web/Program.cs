@@ -15,9 +15,9 @@ namespace Apliu.Net.Web
     {
         public static void Main(string[] args)
         {
-            Apliu.Tools.Logger.WriteLogWeb("开启Apliu Core Web服务");
+            Apliu.Tools.Core.Logger.WriteLogWeb("开启Apliu Core Web服务");
             CreateHostBuilder(args).Build().Run();
-            Apliu.Tools.Logger.WriteLogWeb("关闭Apliu Core Web服务");
+            Apliu.Tools.Core.Logger.WriteLogWeb("关闭Apliu Core Web服务");
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

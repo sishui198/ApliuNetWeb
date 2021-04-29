@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Apliu.Tools.Web
+namespace Apliu.Tools.Core.Web
 {
     public static class HttpRequestHelper
     {

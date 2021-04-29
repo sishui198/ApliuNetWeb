@@ -1,4 +1,4 @@
-﻿using Apliu.WeChat.Modal;
+﻿using Apliu.WeChat.Core.Modal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,13 +10,13 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
-using Apliu.WeChat.Modal.Response;
-using Apliu.WeChat.Modal.Request;
+using Apliu.WeChat.Core.Modal.Response;
+using Apliu.WeChat.Core.Modal.Request;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Drawing;
 
-namespace Apliu.WeChat.Helper
+namespace Apliu.WeChat.Core.Helper
 {
     /// <summary>
     /// 过千人账号有时候获取不到联系人列表，服务器返回503，官方测试结果也是反馈503导致获取不到

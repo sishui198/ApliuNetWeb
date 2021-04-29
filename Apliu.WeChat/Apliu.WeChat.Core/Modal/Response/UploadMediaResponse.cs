@@ -1,4 +1,4 @@
-﻿namespace Apliu.WeChat.Modal.Response
+﻿namespace Apliu.WeChat.Core.Modal.Response
 {
     public class UploadMediaResponse
     {

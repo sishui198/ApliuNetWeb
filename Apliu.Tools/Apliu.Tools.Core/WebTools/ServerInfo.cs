@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Apliu.Tools.Web
+namespace Apliu.Tools.Core.Web
 {
     /// <summary>
     /// 服务器信息类

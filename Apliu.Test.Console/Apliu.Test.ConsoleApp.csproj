@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -18,8 +18,8 @@
     <ProjectReference Include="..\Apliu.Database\Apliu.Database.Oracle\Apliu.Database.Oracle.csproj" />
     <ProjectReference Include="..\Apliu.Database\Apliu.Database.ORM\Apliu.Database.ORM.csproj" />
     <ProjectReference Include="..\Apliu.Database\Apliu.Database.SqlServer\Apliu.Database.SqlServer.csproj" />
-    <ProjectReference Include="..\Apliu.Tools\Apliu.Tools.Core\Apliu.Tools.csproj" />
-    <ProjectReference Include="..\Apliu.WeChat\Apliu.WeChat.Core\Apliu.WeChat.csproj" />
+    <ProjectReference Include="..\Apliu.Tools\Apliu.Tools.Core\Apliu.Tools.Core.csproj" />
+    <ProjectReference Include="..\Apliu.WeChat\Apliu.WeChat.Core\Apliu.WeChat.Core.csproj" />
   </ItemGroup>
 
 </Project>

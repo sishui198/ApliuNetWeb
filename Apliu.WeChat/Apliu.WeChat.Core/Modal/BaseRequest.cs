@@ -1,7 +1,7 @@
-﻿using Apliu.WeChat.Helper;
+﻿using Apliu.WeChat.Core.Helper;
 using System;
 
-namespace Apliu.WeChat.Modal
+namespace Apliu.WeChat.Core.Modal
 {
     public class BaseRequest
     {

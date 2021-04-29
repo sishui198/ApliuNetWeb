@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Apliu.Tools
+namespace Apliu.Tools.Core
 {
     public class Logger
     {

@@ -6,7 +6,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 
-namespace Apliu.Tools
+namespace Apliu.Tools.Core
 {
     public class JsonHelper
     {

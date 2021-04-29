@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Apliu.WeChat.Modal
+namespace Apliu.WeChat.Core.Modal
 {
 
     /// <summary>

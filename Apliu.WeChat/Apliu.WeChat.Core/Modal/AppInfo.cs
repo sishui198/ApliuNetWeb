@@ -1,4 +1,4 @@
-﻿namespace Apliu.WeChat.Modal
+﻿namespace Apliu.WeChat.Core.Modal
 {
     public class AppInfo
     {

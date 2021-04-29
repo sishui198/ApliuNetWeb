@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Apliu.WeChat.Modal
+namespace Apliu.WeChat.Core.Modal
 {
     /// <summary>
     /// 群成员信息

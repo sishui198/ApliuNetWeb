@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Apliu.Tools
+namespace Apliu.Tools.Core
 {
     public class ReflectionHelper
     {

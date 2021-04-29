@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Apliu.WeChat.Modal.Request
+namespace Apliu.WeChat.Core.Modal.Request
 {
     public class StatusNotifyRequest
     {

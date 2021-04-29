@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Apliu.Tools
+namespace Apliu.Tools.Core
 {
     /// <summary>
     /// 提供线程异步执行时，保存返回结果的封装类

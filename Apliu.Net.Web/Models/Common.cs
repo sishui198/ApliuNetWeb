@@ -1,4 +1,4 @@
-﻿using Apliu.Tools;
+﻿using Apliu.Tools.Core;
 using log4net;
 using System;
 

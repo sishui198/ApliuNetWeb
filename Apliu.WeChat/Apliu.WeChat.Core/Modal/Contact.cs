@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Apliu.WeChat.Modal
+namespace Apliu.WeChat.Core.Modal
 {
     /// <summary>
     /// BatchGetContact、GetContact获取到的联系人信息，包括公众号，个人号，群

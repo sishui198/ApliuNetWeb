@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Apliu.WeChat.Helper
+namespace Apliu.WeChat.Core.Helper
 {
     /// <summary>
     /// 自定义回调事件参数
