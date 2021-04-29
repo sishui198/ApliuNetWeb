@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Config\key.txt" />
     <None Remove="Config\MysqlDatabaseInitScript.txt" />
   </ItemGroup>
 
