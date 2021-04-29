@@ -1,0 +1,111 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{D3A9CD2D-5B3A-4387-A675-FC4F2409CCBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{5F9AA44F-00E5-4239-A723-40556C638F42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Test.ConsoleApp", "Apliu.Test.Console\Apliu.Test.ConsoleApp.csproj", "{F7D421F3-1129-4A77-AC9F-E3E93563E561}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Database.MongoDb", "Apliu.Database\Apliu.Database.MongoDB\Apliu.Database.MongoDb.csproj", "{4EF9BDAE-F8A2-496C-A5B5-7671C74CF707}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Database.Mysql", "Apliu.Database\Apliu.Database.Mysql\Apliu.Database.Mysql.csproj", "{0B08CDB4-8D26-4180-810D-9FA603A0D888}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Database.OleDb", "Apliu.Database\Apliu.Database.OleDb\Apliu.Database.OleDb.csproj", "{564BB815-0060-4798-8DBA-20F0D4A47DC1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Database.Oracle", "Apliu.Database\Apliu.Database.Oracle\Apliu.Database.Oracle.csproj", "{636E4C03-1F4C-4F65-8B17-181FA2D4731F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Database.SqlServer", "Apliu.Database\Apliu.Database.SqlServer\Apliu.Database.SqlServer.csproj", "{5486EFFD-4DDA-489A-840F-49D0A94F432D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Database.ORM", "Apliu.Database\Apliu.Database.ORM\Apliu.Database.ORM.csproj", "{B61328D0-B15C-4D1C-81D3-5AC64A9FEDA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Net.Web", "Apliu.Net.Web\Apliu.Net.Web.csproj", "{F249622A-6B0B-4169-8FE6-1AA115966A97}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Database.Core", "Apliu.Database\Apliu.Database.Core\Apliu.Database.Core.csproj", "{2AC29CB7-C89B-4E4C-B106-FAB7C22FB94C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Core", "Apliu.Common\Apliu.Core\Apliu.Core.csproj", "{DE4F496F-F185-4926-9F3C-765FAB44467B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{98F05E7A-63FE-4912-B770-6A08D079760A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Tools", "Apliu.Tools\Apliu.Tools.Core\Apliu.Tools.csproj", "{BF399BE2-47F2-4159-99D6-C3542274E06D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeChat", "WeChat", "{C2419D8C-63E5-45F3-9F1C-A8EF0A1CD3A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.WeChat", "Apliu.WeChat\Apliu.WeChat.Core\Apliu.WeChat.csproj", "{E73EC391-AA33-49BF-9221-DAE72ECE0FB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7D421F3-1129-4A77-AC9F-E3E93563E561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D421F3-1129-4A77-AC9F-E3E93563E561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D421F3-1129-4A77-AC9F-E3E93563E561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D421F3-1129-4A77-AC9F-E3E93563E561}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EF9BDAE-F8A2-496C-A5B5-7671C74CF707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF9BDAE-F8A2-496C-A5B5-7671C74CF707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EF9BDAE-F8A2-496C-A5B5-7671C74CF707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EF9BDAE-F8A2-496C-A5B5-7671C74CF707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B08CDB4-8D26-4180-810D-9FA603A0D888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B08CDB4-8D26-4180-810D-9FA603A0D888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B08CDB4-8D26-4180-810D-9FA603A0D888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B08CDB4-8D26-4180-810D-9FA603A0D888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{564BB815-0060-4798-8DBA-20F0D4A47DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564BB815-0060-4798-8DBA-20F0D4A47DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564BB815-0060-4798-8DBA-20F0D4A47DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564BB815-0060-4798-8DBA-20F0D4A47DC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{636E4C03-1F4C-4F65-8B17-181FA2D4731F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{636E4C03-1F4C-4F65-8B17-181FA2D4731F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{636E4C03-1F4C-4F65-8B17-181FA2D4731F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{636E4C03-1F4C-4F65-8B17-181FA2D4731F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5486EFFD-4DDA-489A-840F-49D0A94F432D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5486EFFD-4DDA-489A-840F-49D0A94F432D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5486EFFD-4DDA-489A-840F-49D0A94F432D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5486EFFD-4DDA-489A-840F-49D0A94F432D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B61328D0-B15C-4D1C-81D3-5AC64A9FEDA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B61328D0-B15C-4D1C-81D3-5AC64A9FEDA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B61328D0-B15C-4D1C-81D3-5AC64A9FEDA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B61328D0-B15C-4D1C-81D3-5AC64A9FEDA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F249622A-6B0B-4169-8FE6-1AA115966A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F249622A-6B0B-4169-8FE6-1AA115966A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F249622A-6B0B-4169-8FE6-1AA115966A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F249622A-6B0B-4169-8FE6-1AA115966A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC29CB7-C89B-4E4C-B106-FAB7C22FB94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC29CB7-C89B-4E4C-B106-FAB7C22FB94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC29CB7-C89B-4E4C-B106-FAB7C22FB94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC29CB7-C89B-4E4C-B106-FAB7C22FB94C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4F496F-F185-4926-9F3C-765FAB44467B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4F496F-F185-4926-9F3C-765FAB44467B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4F496F-F185-4926-9F3C-765FAB44467B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4F496F-F185-4926-9F3C-765FAB44467B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF399BE2-47F2-4159-99D6-C3542274E06D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF399BE2-47F2-4159-99D6-C3542274E06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF399BE2-47F2-4159-99D6-C3542274E06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF399BE2-47F2-4159-99D6-C3542274E06D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E73EC391-AA33-49BF-9221-DAE72ECE0FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E73EC391-AA33-49BF-9221-DAE72ECE0FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E73EC391-AA33-49BF-9221-DAE72ECE0FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E73EC391-AA33-49BF-9221-DAE72ECE0FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4EF9BDAE-F8A2-496C-A5B5-7671C74CF707} = {D3A9CD2D-5B3A-4387-A675-FC4F2409CCBC}
+		{0B08CDB4-8D26-4180-810D-9FA603A0D888} = {D3A9CD2D-5B3A-4387-A675-FC4F2409CCBC}
+		{564BB815-0060-4798-8DBA-20F0D4A47DC1} = {D3A9CD2D-5B3A-4387-A675-FC4F2409CCBC}
+		{636E4C03-1F4C-4F65-8B17-181FA2D4731F} = {D3A9CD2D-5B3A-4387-A675-FC4F2409CCBC}
+		{5486EFFD-4DDA-489A-840F-49D0A94F432D} = {D3A9CD2D-5B3A-4387-A675-FC4F2409CCBC}
+		{B61328D0-B15C-4D1C-81D3-5AC64A9FEDA6} = {D3A9CD2D-5B3A-4387-A675-FC4F2409CCBC}
+		{2AC29CB7-C89B-4E4C-B106-FAB7C22FB94C} = {D3A9CD2D-5B3A-4387-A675-FC4F2409CCBC}
+		{DE4F496F-F185-4926-9F3C-765FAB44467B} = {5F9AA44F-00E5-4239-A723-40556C638F42}
+		{BF399BE2-47F2-4159-99D6-C3542274E06D} = {98F05E7A-63FE-4912-B770-6A08D079760A}
+		{E73EC391-AA33-49BF-9221-DAE72ECE0FB0} = {C2419D8C-63E5-45F3-9F1C-A8EF0A1CD3A5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {944C7AC3-DD6E-4B00-86BA-F7FB107F9B93}
+	EndGlobalSection
+EndGlobal

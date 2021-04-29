@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.32" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Apliu.Database\Apliu.Database.Core\Apliu.Database.Core.csproj" />
+    <ProjectReference Include="..\Apliu.Database\Apliu.Database.MongoDB\Apliu.Database.MongoDb.csproj" />
+    <ProjectReference Include="..\Apliu.Database\Apliu.Database.Mysql\Apliu.Database.Mysql.csproj" />
+    <ProjectReference Include="..\Apliu.Database\Apliu.Database.Oracle\Apliu.Database.Oracle.csproj" />
+    <ProjectReference Include="..\Apliu.Database\Apliu.Database.ORM\Apliu.Database.ORM.csproj" />
+    <ProjectReference Include="..\Apliu.Database\Apliu.Database.SqlServer\Apliu.Database.SqlServer.csproj" />
+    <ProjectReference Include="..\Apliu.Tools\Apliu.Tools.Core\Apliu.Tools.csproj" />
+    <ProjectReference Include="..\Apliu.WeChat\Apliu.WeChat.Core\Apliu.WeChat.csproj" />
+  </ItemGroup>
+
+</Project>
