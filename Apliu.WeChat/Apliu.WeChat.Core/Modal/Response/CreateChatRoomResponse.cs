@@ -28,7 +28,7 @@ namespace Apliu.WeChat.Core.Modal.Response
         /// </summary>
         public List<Member> MemberList { get; set; }
         /// <summary>
-        /// @@e88c4e1e0a60e6bc712953fe6e3a711955e8f5fa24b3f7374d98550e0dad2147
+        /// @@
         /// </summary>
         public string ChatRoomName { get; set; }
         /// <summary>

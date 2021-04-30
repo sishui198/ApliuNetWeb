@@ -13,11 +13,11 @@ namespace Apliu.WeChat.Core.Modal.Request
         /// </summary>
         public int Code { get; set; }
         /// <summary>
-        /// @66b04b8cc2009212a4987adee710fd16
+        /// @
         /// </summary>
         public string FromUserName { get; set; }
         /// <summary>
-        /// @66b04b8cc2009212a4987adee710fd16
+        /// @
         /// </summary>
         public string ToUserName { get; set; }
         /// <summary>

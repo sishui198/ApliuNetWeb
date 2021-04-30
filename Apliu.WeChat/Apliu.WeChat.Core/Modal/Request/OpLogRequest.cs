@@ -8,7 +8,7 @@
     class OpLogRequest
     {
         /// <summary>
-        /// @506400cfe028ac7d23f80a4054e5f930
+        /// @
         /// </summary>
         public string UserName { get; set; }
         /// <summary>

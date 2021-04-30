@@ -5,7 +5,7 @@ namespace Apliu.WeChat.Core.Modal.Request
     public class MemberItem
     {
         /// <summary>
-        /// @4ed575f6e610b3f192dec91e495c0b96469c72ac0af22a997afbf3785dc4af4e
+        /// @
         /// </summary>
         public string UserName { get; set; }
     }

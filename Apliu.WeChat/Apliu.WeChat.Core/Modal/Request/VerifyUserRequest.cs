@@ -27,11 +27,11 @@ namespace Apliu.WeChat.Core.Modal.Request
     public class VerifyUser
     {
         /// <summary>
-        /// @831657f3122f1548a8fbf50a558c4e53
+        /// @
         /// </summary>
         public string Value { get; set; }
         /// <summary>
-        /// v2_e7e35e3a4a319226ddd30993c4ac722991d568c574ca2bd3be62548710b1d1572591de1cf96dbe0656ce9930038af3fffaeae72d11175c9555440ddd2288749c@stranger
+        /// @stranger
         /// </summary>
         public string VerifyUserTicket { get; set; }
     }
@@ -79,7 +79,7 @@ namespace Apliu.WeChat.Core.Modal.Request
         /// </summary>
         public List<int> SceneList { get; set; }
         /// <summary>
-        /// @crypt_372b266_9f05c7b43293f66534700c288956ea7c
+        /// @
         /// </summary>
         public string skey { get; set; }
     }

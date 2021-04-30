@@ -80,7 +80,7 @@ namespace Apliu.Test.ConsoleApp
             Console.WriteLine(JsonConvert.SerializeObject(b22));
             var c22 = d22.Query("select * from tf_fundinfo where fund_id=1");
             Console.WriteLine(JsonConvert.SerializeObject(c22));
-            //var dbContext = Apliu.Database.DbContext.CreateDbContext(DbType.OleDb, "", "", "C:\\Users\\hspcadmin\\Desktop\\test\\apliu.accdb", "", "");
+            //var dbContext = Apliu.Database.DbContext.CreateDbContext(DbType.OleDb, "", "", "C:\\Users\\\\Desktop\\test\\apliu.accdb", "", "");
             //var a11 = dbContext.Query("select * from test");
             //var b11 = dbContext.Execute("update test set name='444'");
             //var c11 = dbContext.Query("select * from test");
@@ -146,17 +146,6 @@ namespace Apliu.Test.ConsoleApp
                          select a;
 
 
-            return;
-
-            //DatabaseType databaseType = DatabaseType.SqlServer;
-            //String databaseConnection = @"Data Source=APLIUDELL\SQLEXPRESS;Database=ApliuWeb;User ID=sa;Password=sa";
-            //DatabaseHelper databaseHelper = new DatabaseHelper(databaseType, databaseConnection);
-            //string sql01 = "insert into test (ID,NAME) values('" + Guid.NewGuid().ToString().ToLower() + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "');";
-            //databaseHelper.BeginTransaction(60);
-            //int p1 = databaseHelper.PostData(sql01);
-            //databaseHelper.Complete();
-
-            //DataSet ds = databaseHelper.GetData("select * from test where name like '%2018-08-13%'");
             return;
             DataTable dataTable = new DataTable
             {

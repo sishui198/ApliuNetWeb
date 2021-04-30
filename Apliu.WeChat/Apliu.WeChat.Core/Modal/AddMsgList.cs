@@ -45,15 +45,15 @@ namespace Apliu.WeChat.Core.Modal
     public class AddMsg
     {
         /// <summary>
-        /// 8823881319420351252
+        /// 
         /// </summary>
         public string MsgId { get; set; }
         /// <summary>
-        /// @e985b6acfda8f6d6059b82b7fdfda89c4ab93d943aefd3508eca54462359b566
+        /// @
         /// </summary>
         public string FromUserName { get; set; }
         /// <summary>
-        /// @56d16d9903cdd1e9f42181fd931d2236
+        /// @
         /// </summary>
         public string ToUserName { get; set; }
         /// <summary>
@@ -110,7 +110,6 @@ namespace Apliu.WeChat.Core.Modal
         public StatusNotifyCode StatusNotifyCode { get; set; }
         /// <summary>
         /// 一个也可能是多个，需要获取信息，直接GetBatchGetContactAsync传入参数即可。
-        /// @56d16d9903cdd1e9f42181fd931d2236
         /// </summary>
         public string StatusNotifyUserName { get; set; }
         /// <summary>

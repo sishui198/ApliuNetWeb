@@ -25,11 +25,11 @@ namespace Apliu.WeChat.Core.Modal.Response
         /// </summary>
         public User User { get; set; }
         /// <summary>
-        /// filehelper,@2f4024df37e9ff42d2d095354916185e,@29687b9dc60c7d44424b6a3d9b478e42,
+        /// filehelper,@,@,
         /// </summary>
         public string ChatSet { get; set; }
         /// <summary>
-        /// @crypt_372b266_2f6f7cb1612ee9b9758ce0e39baa3ccb
+        /// @
         /// </summary>
         public string SKey { get; set; }
         /// <summary>

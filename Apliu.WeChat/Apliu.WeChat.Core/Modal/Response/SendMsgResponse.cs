@@ -7,7 +7,7 @@
         /// </summary>
         public BaseResponse BaseResponse { get; set; }
         /// <summary>
-        /// 6591428511450054574
+        /// 
         /// </summary>
         public string MsgID { get; set; }
         /// <summary>

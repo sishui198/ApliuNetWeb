@@ -8,7 +8,6 @@ namespace Apliu.Tools.Core
 {
     public interface ISMSMessage
     {
-        ///api/toolapi/sendsms?mobile=18779182730&smscontent=您正在使用短信服务，短信验证码是ACBXDFF，2分钟之内有效，如非本人操作，请忽略本短信。&smsappid=1400075540&smsappkey=b0a0f4466492c96fcd3d1d334cc01749
         bool SendSMS(string Mobile, string SMSContent, out string SendMsg, out string SendLogSql, params string[] Args);
     }
 

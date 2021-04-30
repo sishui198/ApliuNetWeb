@@ -273,7 +273,7 @@ namespace Apliu.WeChat.Core.Helper
         {
             try
             {
-                string jsloginUrl = "https://login.wx.qq.com/jslogin?appid=wx782c26e4c19acffb&redirect_uri=https%3A%2F%2Fwx.qq.com%2Fcgi-bin%2Fmmwebwx-bin%2Fwebwxnewloginpage&fun=new&lang=en_US&_=" + OtherUtils.GetJavaTimeStamp();
+                string jsloginUrl = "https://login.wx.qq.com/jslogin?appid=&redirect_uri=https%3A%2F%2Fwx.qq.com%2Fcgi-bin%2Fmmwebwx-bin%2Fwebwxnewloginpage&fun=new&lang=en_US&_=" + OtherUtils.GetJavaTimeStamp();
                 string result = httpClient.GetString(jsloginUrl);
                 OtherUtils.Debug("GetLoginQrCode " + result);
                 string qruuidStr = "window.QRLogin.uuid = \"";
@@ -858,7 +858,7 @@ namespace Apliu.WeChat.Core.Helper
                     Msg = new Msg()
                     {
                         ClientMsgId = time,
-                        Content = string.Format("<appmsg appid='wxeb7ec651dd0aefa9' sdkver=''><title>{0}</title><des></des><action></action><type>6</type><content></content><url></url><lowurl></lowurl><appattach><totallen>{1}</totallen><attachid>{2}</attachid><fileext>{3}</fileext></appattach><extinfo></extinfo></appmsg>", fileInfo.Name, fileInfo.Length, mediaId, fileInfo.Extension.Substring(1)),
+                        Content = string.Format("<appmsg appid='' sdkver=''><title>{0}</title><des></des><action></action><type>6</type><content></content><url></url><lowurl></lowurl><appattach><totallen>{1}</totallen><attachid>{2}</attachid><fileext>{3}</fileext></appattach><extinfo></extinfo></appmsg>", fileInfo.Name, fileInfo.Length, mediaId, fileInfo.Extension.Substring(1)),
                         FromUserName = user.UserName,
                         ToUserName = toUserName,
                         LocalID = time,
