@@ -129,7 +129,7 @@ namespace Apliu.Tools.Core.Web
             }
             catch (Exception ex)
             {
-                Logger.WriteLogWeb("Get请求失败，URL：" + getUrl + "，详情：" + ex.Message);
+                //Logger.WriteLogWeb("Get请求失败，URL：" + getUrl + "，详情：" + ex.Message);
             }
             return result;
         }
@@ -175,7 +175,7 @@ namespace Apliu.Tools.Core.Web
             }
             catch (Exception ex)
             {
-                Logger.WriteLogWeb("Post请求失败，URL：" + postUrl + "，详情：" + ex.Message);
+                //Logger.WriteLogWeb("Post请求失败，URL：" + postUrl + "，详情：" + ex.Message);
             }
 
             return result;

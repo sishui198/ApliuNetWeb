@@ -6,18 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Config\MysqlDatabaseInitScript.txt" />
+    <None Remove="config\mysqlscript.sql" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Config\MysqlDatabaseInitScript.txt">
+    <Content Include="config\mysqlscript.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.12" />
-    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Config\key.txt">
+    <None Update="config\key.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

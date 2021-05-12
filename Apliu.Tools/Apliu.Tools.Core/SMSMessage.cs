@@ -47,7 +47,6 @@ namespace Apliu.Tools.Core
             string response = HttpRequestHelper.HttpPost(sendurl, sendjson);
             bool result = AnalysisResponse(response, out SendMsg);
             SendLogSql = string.Format(sqlInsertAll, Guid.NewGuid(), Mobile, SMSContent, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), "Apliu", "验证码", result, SendMsg);
-            Logger.WriteLogWeb("  sendurl:" + sendurl + "  sendjson:" + sendjson + "  response:" + response + "  insertlog:" + SendLogSql);
             //DataAccess.PostData(insertlog);
             return result;
         }

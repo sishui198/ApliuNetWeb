@@ -33,14 +33,7 @@
   "DatabaseUserName": "apliu",
   "DatabasePassword": "+HMYHJxTEX4=",
 
-  /*
-    Public:
-        "DatabaseConnection": "Data Source=1;Database=1;User ID=1;Password=1",
-        "TesDatabaseConnection": "Data Source=1;Database=1;User ID=1;Password=1",
-    Debug:
-        "DatabaseConnection": "Data Source=1;Database=1;User ID=1;Password=1",
-        "TesDatabaseConnection": "Data Source=1;Database=1;User ID=1;Password=1",
-    */
+
 
   /*各类业务数据*/
   "AppSettings": {

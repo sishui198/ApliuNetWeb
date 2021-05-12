@@ -1,4 +1,5 @@
-﻿using Apliu.Tools.Core;
+﻿using Apliu.Logger;
+using Apliu.Tools.Core;
 using ApliuCoreWeb.Models;
 using ApliuCoreWeb.Models.WeChat;
 using Microsoft.AspNetCore.Http;
@@ -34,7 +35,7 @@ namespace ApliuCoreWeb.Controllers.WeChat
             string msg_signature = HttpContext.Request.Query["msg_signature"];
             string encrypt_type = HttpContext.Request.Query["encrypt_type"];
 
-            Logger.WriteLogAsync("请求方式：" + HttpContext.Request.Method.ToUpper() + "，请求原地址：" + HttpContext.Request.GetAbsoluteUri().ToString());
+            Log.Default.Debug("请求方式：" + HttpContext.Request.Method.ToUpper() + "，请求原地址：" + HttpContext.Request.GetAbsoluteUri().ToString());
 
             //验证消息是否来自微信服务器
             if (WeChatBase.CheckSignature(signature, timestamp, nonce))
@@ -79,12 +80,12 @@ namespace ApliuCoreWeb.Controllers.WeChat
                                     }
                                     else
                                     {
-                                        Logger.WriteLogAsync("Error：接收微信服务器推送的消息，加密报文失败，ret: " + resqRet);
+                                        Log.Default.Error("Error：接收微信服务器推送的消息，加密报文失败，ret: " + resqRet);
                                     }
                                 }
                                 else
                                 {
-                                    Logger.WriteLogAsync("Error：接收微信服务器推送的消息，解密报文失败，ret: " + reqRet);
+                                    Log.Default.Error("Error：接收微信服务器推送的消息，解密报文失败，ret: " + reqRet);
                                 }
                             }
                             else
@@ -97,7 +98,7 @@ namespace ApliuCoreWeb.Controllers.WeChat
                     }
                     catch (Exception ex)
                     {
-                        Logger.WriteLogAsync("Error：接收微信服务器推送的消息，处理失败，详情: " + ex.Message);
+                        Log.Default.Error("Error：接收微信服务器推送的消息，处理失败，详情: " + ex.Message, ex);
                     }
                 }
             }
@@ -115,7 +116,7 @@ namespace ApliuCoreWeb.Controllers.WeChat
             String respContent = "ERROR";
             try
             {
-                Common.Log4Net.Debug("111111111");
+                Log.Default.Debug("111111111");
                 //DataAccess.Instance.TestCeshi();
 
                 #region 测试数据库事务
@@ -143,7 +144,7 @@ namespace ApliuCoreWeb.Controllers.WeChat
             }
             catch (Exception ex)
             {
-                Common.Log4Net.Error("未知错误", ex);
+                Log.Default.Error("未知错误", ex);
                 respContent = ex.Message;
             }
 

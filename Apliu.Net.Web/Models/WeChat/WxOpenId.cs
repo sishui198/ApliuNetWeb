@@ -1,4 +1,5 @@
-﻿using Apliu.Tools.Core;
+﻿using Apliu.Logger;
+using Apliu.Tools.Core;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net;
@@ -46,7 +47,7 @@ namespace ApliuCoreWeb.Models.WeChat
             }
             catch (Exception ex)
             {
-                Logger.WriteLogWeb("获取OpenId失败（Code：" + code + "），详情：" + ex.Message);
+                Log.Default.Error("获取OpenId失败（Code：" + code + "），详情：" + ex.Message, ex);
                 return String.Empty;
             }
         }
@@ -68,7 +69,7 @@ namespace ApliuCoreWeb.Models.WeChat
             }
             catch (Exception ex)
             {
-                Logger.WriteLogWeb("获取UnionId失败（AccessToken：" + WxTokenManager.AccessToken + "，OpenID：" + openid + "），详情：" + ex.Message);
+                Log.Default.Error("获取UnionId失败（AccessToken：" + WxTokenManager.AccessToken + "，OpenID：" + openid + "），详情：" + ex.Message, ex);
                 return String.Empty;
             }
         }

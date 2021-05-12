@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Apliu.Logger
 {
-    public interface ILogger
+    public interface ILog
     {
         void Debug(object message);
         void Debug(object message, Exception exception);

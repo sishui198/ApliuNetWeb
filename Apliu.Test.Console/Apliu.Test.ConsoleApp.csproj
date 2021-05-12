@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Apliu.Common\Apliu.Logger\Apliu.Logger.csproj" />
     <ProjectReference Include="..\Apliu.Database\Apliu.Database.Core\Apliu.Database.Core.csproj" />
     <ProjectReference Include="..\Apliu.Database\Apliu.Database.MongoDB\Apliu.Database.MongoDb.csproj" />
     <ProjectReference Include="..\Apliu.Database\Apliu.Database.Mysql\Apliu.Database.Mysql.csproj" />

@@ -1,4 +1,5 @@
-﻿using Apliu.Tools.Core;
+﻿using Apliu.Logger;
+using Apliu.Tools.Core;
 using Apliu.Tools.Core.Web;
 using System;
 using System.Data;
@@ -61,8 +62,7 @@ namespace ApliuCoreWeb.Models.WeChat
             }
             catch (Exception ex)
             {
-                Logger.WriteLogAsync($"回复微信公众号消息失败,详情:{ex.Message}");
-                Logger.WriteLogAsync($"StackTrace:{ex.StackTrace}");
+                Log.Default.Error($"回复微信公众号消息失败,详情:{ex.Message}", ex);
             }
             return responseContent;
         }

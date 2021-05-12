@@ -1,4 +1,5 @@
-﻿using Apliu.Tools.Core;
+﻿using Apliu.Logger;
+using Apliu.Tools.Core;
 using Apliu.Tools.Core.Web;
 using Newtonsoft.Json.Linq;
 using System;
@@ -76,7 +77,8 @@ namespace ApliuCoreWeb.Models.WeChat
                 }
                 _accessToken = jObjAccessToken["access_token"].ToString();
                 expires_in = jObjAccessToken["expires_in"].ToString();
-                if (timer == null) Logger.WriteLogAsync("初始化Access_Token完成，Access_Token：" + AccessToken);
+                if (timer == null)
+                    Log.Default.Info("初始化Access_Token完成，Access_Token：" + AccessToken);
 
                 //JsApiTicket
                 System.Net.Http.HttpResponseMessage respJsTicket = HttpRequestHelper.HttpGetAsync(RequestJsTicketUri).Result;
@@ -88,11 +90,12 @@ namespace ApliuCoreWeb.Models.WeChat
                     throw new Exception(jsTicketContent);
                 }
                 _jsApiTicket = jObjJsTicket["ticket"].ToString();
-                if (timer == null) Logger.WriteLogAsync("初始化JsApiTicket完成，JsApiTicket：" + _jsApiTicket);
+                if (timer == null)
+                    Log.Default.Info("初始化JsApiTicket完成，JsApiTicket：" + _jsApiTicket);
             }
             catch (Exception ex)
             {
-                Logger.WriteLogAsync("初始化access_token失败，详情：" + ex.Message);
+                Log.Default.Error("初始化access_token失败，详情：" + ex.Message, ex);
             }
         }
 
@@ -119,7 +122,7 @@ namespace ApliuCoreWeb.Models.WeChat
                 timer.Elapsed += Timer_Elapsed;
                 timer.Start();
 
-                Logger.WriteLogAsync("启动access_token管理任务完成");
+                Log.Default.Info("启动access_token管理任务完成");
             }
         }
 
@@ -131,7 +134,7 @@ namespace ApliuCoreWeb.Models.WeChat
         private static void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             GetAccessToken();
-            Logger.WriteLogAsync("access_token管理任务自动刷新，access_token：" + AccessToken);
+            Log.Default.Info("access_token管理任务自动刷新，access_token：" + AccessToken);
         }
     }
 }

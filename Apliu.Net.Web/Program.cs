@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Apliu.Logger;
 
 namespace Apliu.Net.Web
 {
@@ -15,9 +16,9 @@ namespace Apliu.Net.Web
     {
         public static void Main(string[] args)
         {
-            Apliu.Tools.Core.Logger.WriteLogWeb("开启Apliu Core Web服务");
+            Log.Default.Info("开启Apliu Core Web服务");
             CreateHostBuilder(args).Build().Run();
-            Apliu.Tools.Core.Logger.WriteLogWeb("关闭Apliu Core Web服务");
+            Log.Default.Info("关闭Apliu Core Web服务");
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

@@ -97,7 +97,7 @@ namespace ApliuCoreWeb.Models
         {
             Appsettings = GetSetting<Appsettings>("Appsettings");
             Domain = GetSetting("Domain");
-            AllEncodingAESKey = File.ReadAllText("Config/key.txt");
+            AllEncodingAESKey = File.ReadAllText("config/key.txt");
             DatabaseType = GetSetting("DatabaseType");
             DatabaseIp = GetSetting("DatabaseIp");
             DatabaseName = GetSetting("DatabaseName");

@@ -1,4 +1,5 @@
 ﻿using Apliu.Database.Core;
+using Apliu.Logger;
 using Apliu.Standard.ORM;
 using Apliu.Tools.Core;
 using System;
@@ -134,7 +135,7 @@ namespace ApliuCoreWeb.Models
             }
             catch (Exception ex)
             {
-                Logger.WriteLogAsync("加载数据库配置失败，详情：" + ex.Message);
+                Log.Default.Fatal("加载数据库配置失败，详情：" + ex.Message, ex);
             }
         }
 
@@ -223,8 +224,7 @@ namespace ApliuCoreWeb.Models
             }
             catch (Exception ex)
             {
-                Logger.WriteLogWeb("数据库查询失败，Sql：" + commandText + "，详情：" + ex.Message);
-                Logger.WriteLogWeb("StackTrace：" + ex.StackTrace);
+                Log.Default.Error("数据库查询失败，Sql：" + commandText + "，详情：" + ex.Message, ex);
             }
             return dsData;
         }
@@ -246,8 +246,7 @@ namespace ApliuCoreWeb.Models
             }
             catch (Exception ex)
             {
-                Logger.WriteLogWeb("数据库更新失败，Sql：" + commandText + "，详情：" + ex.Message);
-                Logger.WriteLogWeb("StackTrace：" + ex.StackTrace);
+                Log.Default.Error("数据库更新失败，Sql：" + commandText + "，详情：" + ex.Message, ex);
             }
             return result;
         }
@@ -266,8 +265,7 @@ namespace ApliuCoreWeb.Models
             }
             catch (Exception ex)
             {
-                Logger.WriteLogWeb($"数据库批量插入失败，TableName：{dataTable?.TableName}，Count：{dataTable?.Rows?.Count}，详情：" + ex.Message);
-                Logger.WriteLogWeb("StackTrace：" + ex.StackTrace);
+                Log.Default.Error($"数据库批量插入失败，TableName：{dataTable?.TableName}，Count：{dataTable?.Rows?.Count}，详情：" + ex.Message, ex);
                 return -1;
             }
         }
