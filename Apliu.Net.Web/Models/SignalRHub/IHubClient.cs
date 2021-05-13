@@ -10,9 +10,9 @@ namespace ApliuCoreWeb.Models.SignalRHub
     /// </summary>
     public class MessageModel
     {
-        public String username;
-        public String message;
-        public String datetimenow = DateTimeHelper.DataTimeNow.ToString("yyyy-MM-dd HH:mm:ss");
+        public String username { get; set; }
+        public String message { get; set; }
+        public String datetimenow { get; set; } = DateTimeHelper.DataTimeNow.ToString("yyyy-MM-dd HH:mm:ss");
     }
 
     /// <summary>

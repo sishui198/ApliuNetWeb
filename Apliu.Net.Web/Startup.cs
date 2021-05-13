@@ -73,11 +73,10 @@ namespace Apliu.Net.Web
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<ApliuCoreWeb.Controllers.WeChat.WeChatHub>("/weChatHub");
             });
-            
+
             //https://docs.microsoft.com/zh-cn/aspnet/core/signalr/hubcontext?view=aspnetcore-2.1
             //app.Use(next => (context) =>
             //{
@@ -86,17 +85,6 @@ namespace Apliu.Net.Web
             //                        .GetServices<Microsoft.AspNetCore.SignalR.IHubContext<WeChatHub>>();
             //    return null;
             //});
-            //app.UseSignalR(routes =>
-            //{
-            //    routes.MapHub<Controllers.WeChat.WeChatHub>("/weChatHub");
-            //});
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
-
             Log.Default.Info("App Configure 配置完成");
 
             //启动自定义初始化事件
