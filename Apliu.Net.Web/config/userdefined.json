@@ -8,7 +8,7 @@
         "Port": "5000"
       },
       "Https": {
-        "IsEnabled": true,
+        "IsEnabled": false,
         "Address": "0.0.0.0",
         "Port": "5001",
         "Certificate": {
@@ -21,10 +21,10 @@
   },
 
   /*网站域名*/
-  "Domain": "https://apliu.xyz",
+  "Domain": "http://apliu.xyz",
 
   /*是否开启HTTPS重定向服务*/
-  "IsUseHttps": true,
+  "IsUseHttps": false,
 
   /*业务数据库类型: SqlServer / Oracle / Mysql */
   "DatabaseType": "Mysql",
