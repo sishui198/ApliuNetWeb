@@ -29,7 +29,7 @@ namespace ApliuCoreWeb.Controllers
                 result.msg = "用户名不能为空";
                 return result.ToString();
             }
-            if (!(HttpContext.Session.GetValue(CodeType.ChangePassword.ToString()) is CodeCase cc) || (DateTimeHelper.DataTimeNow - cc.CreateTime).Seconds > cc.Timeout)
+            if (!(HttpContext.Session.GetValue<CodeCase>(CodeType.ChangePassword.ToString()) is CodeCase cc) || (DateTimeHelper.DataTimeNow - cc.CreateTime).Seconds > cc.Timeout)
             {
                 result.msg = "请重新获取短信验证码";
                 return result.ToString();
@@ -93,7 +93,7 @@ namespace ApliuCoreWeb.Controllers
                 result.msg = "用户名不能为空";
                 return result.ToString();
             }
-            if (!(HttpContext.Session.GetValue(CodeType.Register.ToString()) is CodeCase cc) || (DateTimeHelper.DataTimeNow - cc.CreateTime).Seconds > cc.Timeout)
+            if (!(HttpContext.Session.GetValue<CodeCase>(CodeType.Register.ToString()) is CodeCase cc) || (DateTimeHelper.DataTimeNow - cc.CreateTime).Seconds > cc.Timeout)
             {
                 result.msg = "请重新获取短信验证码";
                 return result.ToString();
@@ -190,9 +190,6 @@ namespace ApliuCoreWeb.Controllers
                 code = "-1",
                 msg = "用户未登录"
             };
-            return result.ToString();
-
-
             string userid = HttpContext.Session.GetUserInfo()?.UserId;
             string username = HttpContext.Session.GetUserInfo()?.UserName;
             if (!string.IsNullOrEmpty(userid) && !string.IsNullOrEmpty(username))

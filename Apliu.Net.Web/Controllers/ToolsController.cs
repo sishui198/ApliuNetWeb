@@ -267,7 +267,7 @@ namespace ApliuCoreWeb.Controllers
                 return result.ToString();
             }
             string sqlWhere = string.IsNullOrEmpty(Key) ? " and TextKey is null " : " and TextKey= '" + SecurityHelper.UrlDecode(Key.Trim(), Encoding.UTF8) + "' ";
-            string userid = null;// HttpContext.Session.GetUserInfo()?.UserId;
+            string userid = HttpContext.Session.GetUserInfo()?.UserId;
             sqlWhere += string.IsNullOrEmpty(userid) ? " and UserId = 'Everyone' " : " and UserId= '" + userid + "' ";
 
             DataSet dsText = DataAccess.Instance.GetData("select TEXTCONTENT,UPDATETIME from TempText where 1=1 " + sqlWhere + "  limit 0,1");
@@ -311,7 +311,7 @@ namespace ApliuCoreWeb.Controllers
                 return result.ToString();
             }
             string sqlWhere = string.IsNullOrEmpty(Key) ? " and TextKey is null " : " and TextKey='" + SecurityHelper.UrlEncode(Key.Trim(), Encoding.UTF8) + "' ";
-            string userid = "Everyone";// string.IsNullOrEmpty(HttpContext.Session.GetUserInfo()?.UserId) ? "Everyone" : HttpContext.Session.GetUserInfo()?.UserId;
+            string userid = string.IsNullOrEmpty(HttpContext.Session.GetUserInfo()?.UserId) ? "Everyone" : HttpContext.Session.GetUserInfo()?.UserId;
             sqlWhere += " and UserId = '" + userid + "'";
 
             string updatesql = string.Empty;

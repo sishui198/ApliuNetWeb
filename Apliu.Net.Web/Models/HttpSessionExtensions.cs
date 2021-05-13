@@ -17,11 +17,11 @@ namespace ApliuCoreWeb.Models
             session.Set(key, JsonHelper.SerializeObject(value));
         }
 
-        public static Object GetValue(this ISession session, String key)
+        public static T GetValue<T>(this ISession session, String key)
         {
             Byte[] objArry = null;
             session.TryGetValue(key, out objArry);
-            return JsonHelper.DeserializeObject(objArry);
+            return JsonHelper.DeserializeObject<T>(objArry);
         }
 
         /// <summary>

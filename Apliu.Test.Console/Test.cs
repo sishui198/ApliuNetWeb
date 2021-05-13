@@ -66,6 +66,8 @@ namespace Apliu.Test.ConsoleApp
 
         public static void Run()
         {
+            var dfdf = SecurityHelper.MD5Encrypt("323440", Encoding.UTF8);
+            return;
             var d11 = DbContext.CreateDbContext(DatabaseType.Mysql, "", "", "apliunetweb", "apliu", "");
             var a11 = d11.Query("select * from test");
             Console.WriteLine(JsonConvert.SerializeObject(a11));

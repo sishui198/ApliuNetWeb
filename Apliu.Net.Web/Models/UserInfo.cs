@@ -53,7 +53,7 @@ namespace ApliuCoreWeb.Models
         /// <returns></returns>
         public static UserSession GetUserInfo(this ISession ISesson)
         {
-            return ISesson.GetValue("UserSession") as UserSession;
+            return ISesson.GetValue<UserSession>("UserSession");
         }
 
         /// <summary>

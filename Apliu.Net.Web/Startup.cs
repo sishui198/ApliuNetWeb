@@ -30,20 +30,16 @@ namespace Apliu.Net.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //×¢²áHttpContext
+            services.AddDistributedMemoryCache();
             //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            //×¢²á»º´æ·þÎñ
             services.AddMemoryCache();
             //services.AddSingleton<Models.WeChat.WeChatHub>();//×Ô¶¨Òå»º´æ
-            //×¢²áSignalR
             services.AddSignalR();
-            services.AddDistributedMemoryCache();
-            //×¢²áSession
             services.AddSession(options =>
             {
                 // Set a short timeout for easy testing.
                 options.IdleTimeout = TimeSpan.FromSeconds(300);
-                options.Cookie.HttpOnly = true;
+                //options.Cookie.HttpOnly = true;
             });
 
             Log.Default.Info("Services Configure ÅäÖÃÍê³É");
@@ -71,6 +67,8 @@ namespace Apliu.Net.Web
             }
 
             app.UseStaticFiles();
+            app.UseCookiePolicy();
+            app.UseSession();
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
@@ -79,10 +77,7 @@ namespace Apliu.Net.Web
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            app.UseCookiePolicy();
-            //¿ªÆôSession
-            app.UseSession();
+            
             //https://docs.microsoft.com/zh-cn/aspnet/core/signalr/hubcontext?view=aspnetcore-2.1
             //app.Use(next => (context) =>
             //{
