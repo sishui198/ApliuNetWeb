@@ -108,7 +108,7 @@ namespace ApliuCoreWeb.Models
         /// <summary>
         /// 设置并获取配置节点对象 var c =SetConfig<Cad>("Cad", (p => p.b = "123"));
         /// </summary>  
-        public static T SetConfig<T>(String key, Action<T> action, String fileName = "userdefined.json") where T : class, new()
+        public static T SetConfig<T>(String key, Action<T> action, String fileName = "config/userdefined.json") where T : class, new()
         {
             IConfiguration config = new ConfigurationBuilder()
                .SetBasePath(Directory.GetCurrentDirectory())
@@ -127,7 +127,7 @@ namespace ApliuCoreWeb.Models
         /// <summary>
         /// 获取配置节点对象 var result =GetSetting<Logging>("Logging");
         /// </summary>   
-        public static T GetSetting<T>(String key, String fileName = "userdefined.json") where T : class, new()
+        public static T GetSetting<T>(String key, String fileName = "config/userdefined.json") where T : class, new()
         {
             IConfiguration config = new ConfigurationBuilder()
                .SetBasePath(Directory.GetCurrentDirectory())
@@ -148,7 +148,7 @@ namespace ApliuCoreWeb.Models
         /// <param name="key"></param>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public static String GetSetting(String key, String fileName = "userdefined.json")
+        public static String GetSetting(String key, String fileName = "config/userdefined.json")
         {
             IConfiguration config = new ConfigurationBuilder()
                .SetBasePath(Directory.GetCurrentDirectory())

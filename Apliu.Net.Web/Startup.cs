@@ -77,16 +77,7 @@ namespace Apliu.Net.Web
                 endpoints.MapHub<ApliuCoreWeb.Controllers.WeChat.WeChatHub>("/weChatHub");
             });
 
-            //https://docs.microsoft.com/zh-cn/aspnet/core/signalr/hubcontext?view=aspnetcore-2.1
-            //app.Use(next => (context) =>
-            //{
-            //    var hubContext = (Microsoft.AspNetCore.SignalR.IHubContext<WeChatHub>)context
-            //                        .RequestServices
-            //                        .GetServices<Microsoft.AspNetCore.SignalR.IHubContext<WeChatHub>>();
-            //    return null;
-            //});
             Log.Default.Info("App Configure 配置完成");
-
             //启动自定义初始化事件
             UserDefinedStartup();
         }
@@ -99,19 +90,10 @@ namespace Apliu.Net.Web
             try
             {
                 Log.Default.Info("开始执行自定义初始化事件");
-
-                //加载配置文件
-                ConfigurationJson.LoadConfig();
-
-                //初始化程序跟目录
-                ApliuCoreWeb.Models.Common.RootDirectory = Apliu.Tools.Core.Web.ServerInfo.SitePath + @"\";
-
                 //启动access_token管理任务
                 WxTokenManager.TokenTaskStart();
-
                 //创建自定义菜单
                 //Models.WeChat.WxDefaultMenu.CreateMenus();
-
                 //初始化数据库
                 var sqls = File.ReadAllText("config/mysqlscript.sql").Split(";", StringSplitOptions.RemoveEmptyEntries);
                 Console.WriteLine("开始初始化数据库结构");
@@ -126,7 +108,6 @@ namespace Apliu.Net.Web
                     }
                 }
                 Console.WriteLine("");
-
                 Log.Default.Info("自定义初始化事件执行完成");
             }
             catch (System.Exception ex)

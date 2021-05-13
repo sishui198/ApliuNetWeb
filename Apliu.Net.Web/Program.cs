@@ -9,6 +9,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Apliu.Logger;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+using System.Net;
+using Apliu.Tools.Core;
 
 namespace Apliu.Net.Web
 {
@@ -17,6 +20,10 @@ namespace Apliu.Net.Web
         public static void Main(string[] args)
         {
             Log.Default.Info("开启Apliu.Net.Web服务");
+            //初始化程序跟目录
+            ApliuCoreWeb.Models.Common.RootDirectory = Apliu.Tools.Core.Web.ServerInfo.SitePath + @"\";
+            //加载配置文件
+            ConfigurationJson.LoadConfig();
             CreateHostBuilder(args).Build().Run();
             Log.Default.Info("关闭Apliu.Net.Web服务");
         }
@@ -26,48 +33,45 @@ namespace Apliu.Net.Web
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseKestrel(SetHostUrl);
                 });
 
         /// <summary>
-        /// 配置Kestrel
+        /// 配置Kestrel Https
         /// </summary>
         /// <param name="options"></param>
-        private static void SetHostUrl(Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions options)
+        private static void SetHostUrl(KestrelServerOptions options)
         {
-            //依据Host类反序列化appsettings.json中指定节点
-            var hostUrl = ConfigurationJson.HostUrl;
-            foreach (var endpointKvp in hostUrl.Endpoints)
+            var hostUrls = ConfigurationJson.HostUrl;
+            foreach (var endpointKvp in hostUrls.Endpoints)
             {
-                var endpointName = endpointKvp.Key;
-                var endpoint = endpointKvp.Value;//获取appsettings.json的相关配置信息
-                if (!endpoint.IsEnabled)
+                var name = endpointKvp.Key;
+                var url = endpointKvp.Value;
+                if (url.IsEnabled)
                 {
-                    continue;
-                }
-
-                var address = System.Net.IPAddress.Parse(endpoint.Address);
-                options.Listen(address, endpoint.Port, opt =>
-                {
-                    if (endpoint.Certificate != null)//证书不为空使用UserHttps
+                    var address = IPAddress.Parse(url.Address);
+                    options.Listen(address, url.Port, opt =>
                     {
-                        if (endpoint.Certificate.Source != "File" || File.Exists(endpoint.Certificate.Path))
+                        //如果存在证书则启用https
+                        if (url.Certificate != null)
                         {
-                            switch (endpoint.Certificate.Source)
+                            switch (url.Certificate.Source)
                             {
-                                case "File":
-                                    opt.UseHttps(endpoint.Certificate.Path, endpoint.Certificate.Password);
+                                case "pfx":
+                                    if (!File.Exists(url.Certificate.Path))
+                                        throw new FileNotFoundException($"未找到证书文件{url.Certificate.Path}");
+
+                                    opt.UseHttps(url.Certificate.Path, SecurityHelper.DESDecrypt(url.Certificate.Password, ConfigurationJson.AllEncodingAESKey));
                                     break;
                                 default:
-                                    throw new NotImplementedException($"文件 {endpoint.Certificate.Source}还没有实现");
+                                    throw new NotSupportedException($"暂不支持{url.Certificate.Source}证书类型");
                             }
                             //opt.UseConnectionLogging();
                         }
-                    }
-                });
-
-                options.UseSystemd();
+                    });
+                    //options.UseSystemd();
+                }
             }
         }
-
     }
 }

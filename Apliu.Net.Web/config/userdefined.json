@@ -5,26 +5,26 @@
       "Http": {
         "IsEnabled": true,
         "Address": "0.0.0.0",
-        "Port": "80"
+        "Port": "5000"
       },
       "Https": {
-        "IsEnabled": false,
+        "IsEnabled": true,
         "Address": "0.0.0.0",
-        "Port": "443",
+        "Port": "5001",
         "Certificate": {
-          "Source": "File",
-          "Path": "1/1",
-          "Password": "1"
+          "Source": "pfx",
+          "Path": "config/apliu.xyz.pfx",
+          "Password": "+HMYHJxTEX4="
         }
       }
     }
   },
 
   /*网站域名*/
-  "Domain": "",
+  "Domain": "https://apliu.xyz",
 
   /*是否开启HTTPS重定向服务*/
-  "IsUseHttps": false,
+  "IsUseHttps": true,
 
   /*业务数据库类型: SqlServer / Oracle / Mysql */
   "DatabaseType": "Mysql",

@@ -27,6 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="config\userdefined.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="config\key.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

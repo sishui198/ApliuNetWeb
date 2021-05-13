@@ -19,7 +19,6 @@ namespace ApliuCoreWeb.Controllers
             Apliu.Tools.Core.Logger.WriteLogWeb("22222");
             return result;
             Apliu.Core.Database.DatabaseType databaseType = (Apliu.Core.Database.DatabaseType)Enum.Parse(typeof(Apliu.Core.Database.DatabaseType), AppsettingJson.GetuUserDefinedSetting("DatabaseType"));
-            UserConnectionString userConnectionString = AppsettingJson.GetSetting<UserConnectionString>("ConnectionString", "userdefined.json");
             String databaseConnection = String.Empty;
             switch (databaseType)
             {
