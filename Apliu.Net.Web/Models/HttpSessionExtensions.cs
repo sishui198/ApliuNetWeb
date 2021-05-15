@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using System;
 
-namespace ApliuCoreWeb.Models
+namespace Apliu.Net.Web.Models
 {
     public static class HttpSessionExtensions
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Apliu.Standard.ORM
+namespace Apliu.Database.ORM
 {
     /// <summary>
     /// 表名

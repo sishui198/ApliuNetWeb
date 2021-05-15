@@ -6,7 +6,7 @@ using System.Data;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace ApliuCoreWeb.Models.WeChat
+namespace Apliu.Net.Web.Models.WeChat
 {
     public class WxMessageHelp
     {

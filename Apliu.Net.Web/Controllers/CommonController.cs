@@ -1,11 +1,11 @@
 ﻿using Apliu.Tools.Core;
 using Apliu.Tools.Core.Web;
-using ApliuCoreWeb.Models;
+using Apliu.Net.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Text;
 
-namespace ApliuCoreWeb.Controllers
+namespace Apliu.Net.Web.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
@@ -20,7 +20,7 @@ namespace ApliuCoreWeb.Controllers
             string passwordag = HttpContext.Request.Form["passwordag"];
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常"
             };
 
@@ -64,7 +64,7 @@ namespace ApliuCoreWeb.Controllers
             string regs = string.Format(@"update ApUserInfo set Password='{1}' where UserId='{0}';", username, SecurityHelper.MD5Encrypt(password, Encoding.UTF8));
             if (DataAccess.Instance.PostData(regs))
             {
-                result.code = "0";
+                result.code = 0;
                 result.msg = "修改成功";
             }
             else
@@ -84,7 +84,7 @@ namespace ApliuCoreWeb.Controllers
             string passwordag = HttpContext.Request.Form["passwordag"];
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常"
             };
 
@@ -135,7 +135,7 @@ namespace ApliuCoreWeb.Controllers
      VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}');", id, username, username, "", username, "Normal", SecurityHelper.MD5Encrypt(password, Encoding.UTF8), DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), "ApliuWeb", "0");
             if (DataAccess.Instance.PostData(regs))
             {
-                result.code = "0";
+                result.code = 0;
                 result.msg = "注册成功";
             }
             else
@@ -153,7 +153,7 @@ namespace ApliuCoreWeb.Controllers
             string password = HttpContext.Request.Form["password"];
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常"
             };
 
@@ -171,7 +171,7 @@ namespace ApliuCoreWeb.Controllers
             if (UserInfo.LoginCheck(username, password))
             {
                 HttpContext.Session.SetUserInfo(username, username, username, "", "");
-                result.code = "0";
+                result.code = 0;
                 result.msg = "登录成功";
             }
             else
@@ -187,14 +187,14 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "用户未登录"
             };
             string userid = HttpContext.Session.GetUserInfo()?.UserId;
             string username = HttpContext.Session.GetUserInfo()?.UserName;
             if (!string.IsNullOrEmpty(userid) && !string.IsNullOrEmpty(username))
             {
-                result.code = "0";
+                result.code = 0;
                 result.msg = username;
             }
             return result.ToString();
@@ -205,7 +205,7 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "0",
+                code = 0,
                 msg = ""
             };
             HttpContext.Session.Logout();
@@ -217,7 +217,7 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "设置失败"
             };
 
@@ -229,7 +229,7 @@ namespace ApliuCoreWeb.Controllers
             string userid = HttpContext.Session.GetUserInfo()?.UserId;
             if (string.IsNullOrEmpty(userid))
             {
-                result.code = "1";
+                result.code = 1;
                 result.msg = "用户未登录";
                 if (stage.ToInt() > 6) userid = "Everyone";
                 else return result.ToString();
@@ -248,7 +248,8 @@ id, userid, gamename, score, stage, usetime, "",
 DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), HttpContext.GetClientIP());
             if (DataAccess.Instance.PostData(insertgame))
             {
-                if (result.code == "-1") result.code = "0";
+                if (result.code == -1)
+                    result.code = 0;
                 result.msg = "保存成绩成功";
             }
             return result.ToString();

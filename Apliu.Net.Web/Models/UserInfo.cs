@@ -4,7 +4,7 @@ using System;
 using System.Data;
 using System.Text;
 
-namespace ApliuCoreWeb.Models
+namespace Apliu.Net.Web.Models
 {
     /// <summary>
     /// 用户登录的Session对象
@@ -12,12 +12,12 @@ namespace ApliuCoreWeb.Models
     [Serializable]
     public class UserSession
     {
-        public string UserId;
-        public string UserName;
-        public string MobileNumber;
-        public string Openid;
-        public string Unionid;
-        public string hubConnectionId;
+        public string UserId { get; set; }
+        public string UserName { get; set; }
+        public string MobileNumber { get; set; }
+        public string Openid { get; set; }
+        public string Unionid { get; set; }
+        public string hubConnectionId { get; set; }
     }
 
     public static class UserInfo

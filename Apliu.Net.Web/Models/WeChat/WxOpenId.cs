@@ -4,7 +4,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Net;
 
-namespace ApliuCoreWeb.Models.WeChat
+namespace Apliu.Net.Web.Models.WeChat
 {
     public class WxOpenId
     {

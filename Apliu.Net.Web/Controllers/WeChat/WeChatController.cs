@@ -1,8 +1,8 @@
-﻿using ApliuCoreWeb.Models.WeChat;
+﻿using Apliu.Net.Web.Models.WeChat;
 using Microsoft.AspNetCore.Mvc;
-using ApliuCoreWeb.Models;
+using Apliu.Net.Web.Models;
 
-namespace ApliuCoreWeb.Controllers.WeChat
+namespace Apliu.Net.Web.Controllers.WeChat
 {
     public class WeChatController : Controller
     {

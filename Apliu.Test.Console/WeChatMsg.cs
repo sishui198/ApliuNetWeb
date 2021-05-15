@@ -1,4 +1,4 @@
-﻿using Apliu.Standard.ORM;
+﻿using Apliu.Database.ORM;
 using System;
 
 namespace Apliu.Test.ConsoleApp

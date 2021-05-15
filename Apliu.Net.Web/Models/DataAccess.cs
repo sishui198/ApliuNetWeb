@@ -1,16 +1,16 @@
 ﻿using Apliu.Database.Core;
 using Apliu.Logger;
-using Apliu.Standard.ORM;
+using Apliu.Database.ORM;
 using Apliu.Tools.Core;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 
-namespace ApliuCoreWeb.Models
+namespace Apliu.Net.Web.Models
 {
     /// <summary>
-    /// 使用Apliu.Standard.ORM进行对象/数据库映射
+    /// 使用Apliu.Database.ORM进行对象/数据库映射
     /// </summary>
     public class ORM
     {

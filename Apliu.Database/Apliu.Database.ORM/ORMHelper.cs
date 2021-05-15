@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
-namespace Apliu.Standard.ORM
+namespace Apliu.Database.ORM
 {
     public static class ORMHelper
     {

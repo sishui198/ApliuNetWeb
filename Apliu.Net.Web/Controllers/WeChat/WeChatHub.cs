@@ -1,12 +1,12 @@
-﻿using ApliuCoreWeb.Models;
-using ApliuCoreWeb.Models.SignalRHub;
+﻿using Apliu.Net.Web.Models;
+using Apliu.Net.Web.Models.SignalRHub;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace ApliuCoreWeb.Controllers.WeChat
+namespace Apliu.Net.Web.Controllers.WeChat
 {
     public class WeChatHub : IHubServer
     {

@@ -484,7 +484,7 @@ namespace Apliu.Tools.Core
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
             return strbaser64;
         }

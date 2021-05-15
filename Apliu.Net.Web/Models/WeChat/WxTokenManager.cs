@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Threading;
 
-namespace ApliuCoreWeb.Models.WeChat
+namespace Apliu.Net.Web.Models.WeChat
 {
     public class WxTokenManager
     {

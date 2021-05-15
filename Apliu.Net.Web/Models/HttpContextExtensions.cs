@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApliuCoreWeb.Models
+namespace Apliu.Net.Web.Models
 {
     public static class HttpContextExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ApliuCoreWeb.Controllers
+namespace Apliu.Net.Web.Controllers
 {
     [Route("text/{id?}")]
     public class TextController : Controller

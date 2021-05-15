@@ -1,6 +1,6 @@
 ﻿using Apliu.Tools.Core;
 using Apliu.Tools.Core.Web;
-using ApliuCoreWeb.Models;
+using Apliu.Net.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -8,7 +8,7 @@ using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApliuCoreWeb.Controllers
+namespace Apliu.Net.Web.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
@@ -57,7 +57,7 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常",
                 result = "执行失败"
             };
@@ -73,20 +73,20 @@ namespace ApliuCoreWeb.Controllers
             DataAccess.LoadDataAccess("TestDatabase", type, SecurityHelper.DESDecrypt(ip, ConfigurationJson.AllEncodingAESKey), "", dbname, name, SecurityHelper.DESDecrypt(psw, ConfigurationJson.AllEncodingAESKey));
             switch (Type.ToUpper())
             {
-                case "GET":
+                case "QUERY":
                     DataSet sqlds = DataAccess.InstanceKey["TestDatabase"].GetData(Sql);
                     if (sqlds != null && sqlds.Tables.Count > 0)
                     {
-                        result.code = "0";
+                        result.code = sqlds.Tables.Count;
                         result.msg = JsonConvert.SerializeObject(sqlds.Tables[0]);
                         result.result = "执行成功";
                     }
                     break;
-                case "POST":
+                case "EXECUTE":
                     int rank = DataAccess.InstanceKey["TestDatabase"].PostDataExecute(Sql, 30);
                     if (rank >= 0)
                     {
-                        result.code = "0";
+                        result.code = rank;
                         result.msg = "受影响的数据条数：" + rank;
                         result.result = "执行成功";
                     }
@@ -111,7 +111,7 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常",
                 result = "执行失败"
             };
@@ -132,7 +132,7 @@ namespace ApliuCoreWeb.Controllers
                 int rank = dataAccess.PostDataExecute(sql, 30);//DataAccess.InstanceKey[key].PostDataExecute(CommandType.Text, sql, 30, null);
                 if (rank >= 0)
                 {
-                    result.code = "0";
+                    result.code = rank;
                     result.msg = "受影响的数据条数：" + rank;
                     result.result = "执行成功";
                 }
@@ -142,7 +142,7 @@ namespace ApliuCoreWeb.Controllers
                 DataSet sqlds = dataAccess.GetData(sql);//DataAccess.InstanceKey[key].GetData(sql);
                 if (sqlds != null && sqlds.Tables.Count > 0)
                 {
-                    result.code = "0";
+                    result.code = sqlds.Tables.Count;
                     result.msg = JsonConvert.SerializeObject(sqlds.Tables[0]);
                     result.result = "执行成功";
                 }
@@ -155,7 +155,7 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常",
                 result = "执行失败"
             };
@@ -165,7 +165,7 @@ namespace ApliuCoreWeb.Controllers
             bool sendresult = sms.SendSMS(Mobile, SMSContent, out string SendMsg, out sendLogSql, TcSMSAppId, TcSMSAppKey);
             if (sendresult)
             {
-                result.code = "0";
+                result.code = 0;
                 result.result = "发送成功";
             }
             result.msg = SendMsg;
@@ -178,7 +178,7 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常",
                 result = "执行失败"
             };
@@ -188,7 +188,7 @@ namespace ApliuCoreWeb.Controllers
             bool sendresult = sms.SendSMS(Mobile, SMSContent, out string SendMsg, out sendLogSql, TcSMSAppId, TcSMSAppKey);
             if (sendresult)
             {
-                result.code = "0";
+                result.code = 0;
                 result.result = "发送成功";
             }
             result.msg = SendMsg;
@@ -201,7 +201,7 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常",
                 result = "执行失败"
             };
@@ -226,12 +226,12 @@ namespace ApliuCoreWeb.Controllers
             {
                 HttpContext.Session.SetValue(codeCase.Type.ToString(), codeCase);
 
-                result.code = "0";
+                result.code = 0;
                 result.result = "发送成功";
             }
             else
             {
-                result.code = "1";
+                result.code = -1;
                 result.result = "发送失败";
             }
             result.msg = SendMsg;
@@ -254,7 +254,7 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常",
                 result = "执行失败"
             };
@@ -273,7 +273,7 @@ namespace ApliuCoreWeb.Controllers
             DataSet dsText = DataAccess.Instance.GetData("select TEXTCONTENT,UPDATETIME from TempText where 1=1 " + sqlWhere + "  limit 0,1");
             if (dsText != null && dsText.Tables.Count > 0)
             {
-                result.code = "0";
+                result.code = 0;
                 string content = string.Empty;
                 string datetime = string.Empty;
                 if (dsText.Tables[0].Rows.Count > 0)
@@ -297,7 +297,7 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常",
                 result = "执行失败"
             };
@@ -334,7 +334,7 @@ namespace ApliuCoreWeb.Controllers
             bool setResult = DataAccess.Instance.PostData(updatesql);
             if (setResult)
             {
-                result.code = "0";
+                result.code = 0;
                 result.msg = "更新成功";
                 result.result = "更新成功";
             }
@@ -345,18 +345,25 @@ namespace ApliuCoreWeb.Controllers
         /// 字符串处理
         /// </summary>
         /// <returns></returns>
+        [HttpPost]
         [HttpGet]
         public string Security()
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常",
                 result = "执行失败"
             };
 
             string type = HttpContext.Request.Query["type"];
             string content = HttpContext.Request.Query["content"];
+            if ("POST".Equals(HttpContext.Request.Method, StringComparison.InvariantCultureIgnoreCase))
+            {
+                type = HttpContext.Request.Form["type"];
+                content = HttpContext.Request.Form["content"];
+            }
+
             if (!type.Equals("GUID") && (String.IsNullOrEmpty(type) || String.IsNullOrEmpty(content)))
             {
                 result.msg = "处理类型或内容不能为空";
@@ -407,7 +414,7 @@ namespace ApliuCoreWeb.Controllers
                 default: break;
             }
 
-            result.code = "0";
+            result.code = 0;
             result.msg = srcContent;
             result.result = "处理成功";
 
@@ -423,7 +430,7 @@ namespace ApliuCoreWeb.Controllers
         {
             ResponseMessage result = new ResponseMessage
             {
-                code = "-1",
+                code = -1,
                 msg = "发生异常",
                 result = "执行失败"
             };
@@ -444,7 +451,7 @@ namespace ApliuCoreWeb.Controllers
                 Int32 temp10 = Convert.ToInt32(content, from);
                 srcContent = Convert.ToString(temp10, to).ToUpper();
 
-                result.code = "0";
+                result.code = 0;
                 result.msg = srcContent;
                 result.result = "处理成功";
             }
@@ -455,6 +462,6 @@ namespace ApliuCoreWeb.Controllers
             }
 
             return result.ToString();
-        }
+        };
     }
 }

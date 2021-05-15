@@ -1,7 +1,7 @@
 ﻿using Apliu.Tools.Core;
 using System;
 
-namespace ApliuCoreWeb.Models
+namespace Apliu.Net.Web.Models
 {
     [Serializable]
     public class CodeCase

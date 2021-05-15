@@ -1,7 +1,7 @@
 ﻿using Apliu.Logger;
 using Apliu.Tools.Core;
-using ApliuCoreWeb.Models;
-using ApliuCoreWeb.Models.WeChat;
+using Apliu.Net.Web.Models;
+using Apliu.Net.Web.Models.WeChat;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace ApliuCoreWeb.Controllers.WeChat
+namespace Apliu.Net.Web.Controllers.WeChat
 {
     [Route("api/[controller]")]
     [ApiController]

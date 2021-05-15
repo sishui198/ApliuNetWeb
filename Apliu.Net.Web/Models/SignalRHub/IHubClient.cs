@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ApliuCoreWeb.Models.SignalRHub
+namespace Apliu.Net.Web.Models.SignalRHub
 {
     /// <summary>
     /// 消息体

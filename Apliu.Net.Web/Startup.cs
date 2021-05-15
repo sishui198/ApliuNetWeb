@@ -1,8 +1,7 @@
 using Apliu.Logger;
-using Apliu.Tools.Core;
-using ApliuCoreWeb.Models;
-using ApliuCoreWeb.Models.WeChat;
-using log4net;
+using Apliu.Net.Web.Controllers.WeChat;
+using Apliu.Net.Web.Models;
+using Apliu.Net.Web.Models.WeChat;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -58,14 +57,12 @@ namespace Apliu.Net.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
             //开启Https重定向
             if (ConfigurationJson.IsUseHttps)
             {
                 app.UseHttpsRedirection();
                 Log.Default.Info("开启请求重定向到HTTPS的服务");
             }
-
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSession();
@@ -73,10 +70,11 @@ namespace Apliu.Net.Web
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapHub<ApliuCoreWeb.Controllers.WeChat.WeChatHub>("/weChatHub");
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<WeChatHub>("/weChatHub");
             });
-
             Log.Default.Info("App Configure 配置完成");
             //启动自定义初始化事件
             UserDefinedStartup();

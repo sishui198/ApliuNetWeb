@@ -1,4 +1,3 @@
-using ApliuCoreWeb.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -12,6 +11,7 @@ using Apliu.Logger;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using System.Net;
 using Apliu.Tools.Core;
+using Apliu.Net.Web.Models;
 
 namespace Apliu.Net.Web
 {
@@ -21,7 +21,7 @@ namespace Apliu.Net.Web
         {
             Log.Default.Info("开启Apliu.Net.Web服务");
             //初始化程序跟目录
-            ApliuCoreWeb.Models.Common.RootDirectory = Apliu.Tools.Core.Web.ServerInfo.SitePath + @"\";
+            Common.RootDirectory = Apliu.Tools.Core.Web.ServerInfo.SitePath + @"\";
             //加载配置文件
             ConfigurationJson.LoadConfig();
             CreateHostBuilder(args).Build().Run();

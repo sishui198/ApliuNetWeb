@@ -1,8 +1,8 @@
-﻿using Apliu.Standard.ORM;
+﻿using Apliu.Database.ORM;
 using Apliu.Tools.Core;
 using System;
 
-namespace ApliuCoreWeb.Models.WeChat
+namespace Apliu.Net.Web.Models.WeChat
 {
     public class WeChatMsg : IModelORM
     {

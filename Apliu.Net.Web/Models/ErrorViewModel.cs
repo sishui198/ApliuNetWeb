@@ -1,6 +1,6 @@
 using System;
 
-namespace ApliuCoreWeb.Models
+namespace Apliu.Net.Web.Models
 {
     public class ErrorViewModel
     {

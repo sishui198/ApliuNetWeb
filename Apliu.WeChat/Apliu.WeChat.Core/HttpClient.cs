@@ -10,12 +10,12 @@ namespace Apliu.WeChat.Core.Helper
 {
     public class FormDataItem
     {
-        public string Name;
-        public string Value;
-        public bool isFile;
-        public string FileName;
-        public byte[] Content;
-        public int ContentLength;
+        public string Name { get; set; }
+        public string Value { get; set; }
+        public bool isFile { get; set; }
+        public string FileName { get; set; }
+        public byte[] Content { get; set; }
+        public int ContentLength { get; set; }
 
         public FormDataItem(string name, string value)
         {

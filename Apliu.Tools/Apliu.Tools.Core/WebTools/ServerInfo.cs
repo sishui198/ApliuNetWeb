@@ -86,9 +86,9 @@ namespace Apliu.Tools.Core.Web
                 }
 
             }
-            catch (Exception e)
+            catch
             {
-                throw e;
+                throw;
             }
             return longDirSize / 1024;
         }

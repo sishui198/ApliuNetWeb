@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ApliuCoreWeb.Models.WeChat
+namespace Apliu.Net.Web.Models.WeChat
 {
     public class WeChatBase
     {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ApliuCoreWeb.Models
+namespace Apliu.Net.Web.Models
 {
     /// <summary>
     /// HostUrl Json配置访问URL

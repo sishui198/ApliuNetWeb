@@ -21,8 +21,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Database.SqlServer", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Database.ORM", "Apliu.Database\Apliu.Database.ORM\Apliu.Database.ORM.csproj", "{B61328D0-B15C-4D1C-81D3-5AC64A9FEDA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Net.Web", "Apliu.Net.Web\Apliu.Net.Web.csproj", "{F249622A-6B0B-4169-8FE6-1AA115966A97}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Database.Core", "Apliu.Database\Apliu.Database.Core\Apliu.Database.Core.csproj", "{2AC29CB7-C89B-4E4C-B106-FAB7C22FB94C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Core", "Apliu.Common\Apliu.Core\Apliu.Core.csproj", "{DE4F496F-F185-4926-9F3C-765FAB44467B}"
@@ -36,6 +34,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.WeChat.Core", "Apliu.WeChat\Apliu.WeChat.Core\Apliu.WeChat.Core.csproj", "{E73EC391-AA33-49BF-9221-DAE72ECE0FB0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apliu.Logger", "Apliu.Common\Apliu.Logger\Apliu.Logger.csproj", "{179AF91B-8841-4D09-8B53-78654EF6BC39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apliu.Net.Web", "Apliu.Net.Web\Apliu.Net.Web.csproj", "{0B4F6AA0-2D4B-45DF-8207-2DF6A8AA57A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +71,6 @@ Global
 		{B61328D0-B15C-4D1C-81D3-5AC64A9FEDA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B61328D0-B15C-4D1C-81D3-5AC64A9FEDA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B61328D0-B15C-4D1C-81D3-5AC64A9FEDA6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F249622A-6B0B-4169-8FE6-1AA115966A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F249622A-6B0B-4169-8FE6-1AA115966A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F249622A-6B0B-4169-8FE6-1AA115966A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F249622A-6B0B-4169-8FE6-1AA115966A97}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2AC29CB7-C89B-4E4C-B106-FAB7C22FB94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2AC29CB7-C89B-4E4C-B106-FAB7C22FB94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AC29CB7-C89B-4E4C-B106-FAB7C22FB94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -95,6 +91,10 @@ Global
 		{179AF91B-8841-4D09-8B53-78654EF6BC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{179AF91B-8841-4D09-8B53-78654EF6BC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{179AF91B-8841-4D09-8B53-78654EF6BC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4F6AA0-2D4B-45DF-8207-2DF6A8AA57A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4F6AA0-2D4B-45DF-8207-2DF6A8AA57A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4F6AA0-2D4B-45DF-8207-2DF6A8AA57A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4F6AA0-2D4B-45DF-8207-2DF6A8AA57A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

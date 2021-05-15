@@ -3,7 +3,7 @@ using Apliu.Tools.Core;
 using Apliu.Tools.Core.Web;
 using System;
 
-namespace ApliuCoreWeb.Models.WeChat
+namespace Apliu.Net.Web.Models.WeChat
 {
     public class WxDefaultMenu
     {

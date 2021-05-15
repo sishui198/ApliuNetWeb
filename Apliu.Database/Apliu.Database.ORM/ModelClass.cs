@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Apliu.Standard.ORM
+namespace Apliu.Database.ORM
 {
     /// <summary>
     /// ORM Model对象 属性中必须存在特性Identity,且必须存在get函数

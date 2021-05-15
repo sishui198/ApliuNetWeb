@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ApliuCoreWeb.Controllers
+namespace Apliu.Net.Web.Controllers
 {
     public class GameController : Controller
     {

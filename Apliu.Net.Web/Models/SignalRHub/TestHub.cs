@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace ApliuCoreWeb.Models.SignalRHub
+namespace Apliu.Net.Web.Models.SignalRHub
 {
     /// <summary>
     /// Hub名称区分大小写（如未设定，则驼峰命名格式，客户端js里面首字母小写）

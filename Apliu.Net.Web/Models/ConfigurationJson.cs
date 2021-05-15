@@ -7,7 +7,7 @@ using System.IO;
 using Apliu.Tools.Core;
 using System.Linq;
 
-namespace ApliuCoreWeb.Models
+namespace Apliu.Net.Web.Models
 {
     /// <summary>
     /// Json配置文件信息

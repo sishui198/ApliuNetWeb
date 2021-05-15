@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Text;
 
-namespace ApliuCoreWeb.Models.WeChat
+namespace Apliu.Net.Web.Models.WeChat
 {
     public class WxJSSDKHelper
     {

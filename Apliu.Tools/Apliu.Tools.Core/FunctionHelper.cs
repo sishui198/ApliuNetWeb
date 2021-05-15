@@ -39,7 +39,7 @@ namespace Apliu.Tools.Core
         {
             isCompleted = false;
             EveryType everyType = default(EveryType);
-            if (taskAction != null && timeSpan != null && timeSpan.TotalSeconds > 0)
+            if (taskAction != null && timeSpan.TotalSeconds > 0)
             {
                 try
                 {
@@ -64,7 +64,8 @@ namespace Apliu.Tools.Core
                 }
                 catch (Exception ex)
                 {
-                    if (throwException) throw ex;
+                    if (throwException)
+                        throw;
                 }
             }
             return everyType;
@@ -97,7 +98,7 @@ namespace Apliu.Tools.Core
         public static Boolean RunTaskWithTimeout(Action taskAction, TimeSpan timeSpan, Boolean throwException)
         {
             bool isCompleted = false;
-            if (taskAction != null && timeSpan != null && timeSpan.TotalSeconds > 0)
+            if (taskAction != null && timeSpan.TotalSeconds > 0)
             {
                 try
                 {
@@ -118,7 +119,8 @@ namespace Apliu.Tools.Core
                 }
                 catch (Exception ex)
                 {
-                    if (throwException) throw ex;
+                    if (throwException)
+                        throw;
                 }
             }
             return isCompleted;
@@ -157,7 +159,7 @@ namespace Apliu.Tools.Core
         {
             isCompleted = false;
             EveryType everyType = default(EveryType);
-            if (taskAction != null && timeSpan != null && timeSpan.TotalSeconds > 0)
+            if (taskAction != null && timeSpan.TotalSeconds > 0)
             {
                 try
                 {
@@ -175,7 +177,8 @@ namespace Apliu.Tools.Core
                 }
                 catch (Exception ex)
                 {
-                    if (throwException) throw ex;
+                    if (throwException)
+                        throw;
                 }
             }
             return everyType;
@@ -208,7 +211,7 @@ namespace Apliu.Tools.Core
         public static Boolean RunThreadWithTimeout(Action taskAction, TimeSpan timeSpan, Boolean throwException)
         {
             bool isCompleted = false;
-            if (taskAction != null && timeSpan != null && timeSpan.TotalSeconds > 0)
+            if (taskAction != null && timeSpan.TotalSeconds > 0)
             {
                 try
                 {
@@ -220,7 +223,8 @@ namespace Apliu.Tools.Core
                 }
                 catch (Exception ex)
                 {
-                    if (throwException) throw ex;
+                    if (throwException)
+                        throw;
                 }
             }
             return isCompleted;
@@ -242,13 +246,14 @@ namespace Apliu.Tools.Core
             {
                 try
                 {
-                    if (timeSpan != null && timeSpan.TotalSeconds > 0) await Task.Delay(timeSpan);
+                    if (timeSpan.TotalSeconds > 0) await Task.Delay(timeSpan);
                     action.Invoke(paramsObj);
                     isCompleted = true;
                 }
                 catch (Exception ex)
                 {
-                    if (throwException) throw ex;
+                    if (throwException)
+                        throw;
                 }
             }
             if (callbackAction != null) callbackAction.Invoke(isCompleted);
@@ -269,13 +274,14 @@ namespace Apliu.Tools.Core
             {
                 try
                 {
-                    if (timeSpan != null && timeSpan.TotalSeconds > 0) await Task.Delay(timeSpan);
+                    if (timeSpan.TotalSeconds > 0) await Task.Delay(timeSpan);
                     action.Invoke();
                     isCompleted = true;
                 }
                 catch (Exception ex)
                 {
-                    if (throwException) throw ex;
+                    if (throwException)
+                        throw;
                 }
             }
             if (callbackAction != null) callbackAction.Invoke(isCompleted);
@@ -293,17 +299,18 @@ namespace Apliu.Tools.Core
         /// <returns></returns>
         public static async Task RunTimerAsync(Action<Object> action, Object paramsObj, TimeSpan dueTime, TimeSpan period, TimeSpan endTime, Boolean throwException)
         {
-            if (action != null && period != null && period.TotalSeconds > 0 && endTime.TotalSeconds != 0)
+            if (action != null && period.TotalSeconds > 0 && endTime.TotalSeconds != 0)
             {
                 try
                 {
-                    if (dueTime == null || dueTime.TotalSeconds < 0) dueTime = period;
+                    if (dueTime.TotalSeconds < 0) dueTime = period;
                     System.Threading.Timer timer = new System.Threading.Timer((objNull) => { action.Invoke(paramsObj); }, null, dueTime, period);
                     if (endTime.TotalSeconds > 0) await RunTaskTimingAsync(() => { timer.Dispose(); }, endTime, null, throwException);
                 }
                 catch (Exception ex)
                 {
-                    if (throwException) throw ex;
+                    if (throwException)
+                        throw;
                 }
             }
         }
@@ -319,17 +326,18 @@ namespace Apliu.Tools.Core
         /// <returns></returns>
         public static async Task RunTimerAsync(Action action, TimeSpan dueTime, TimeSpan period, TimeSpan endTime, Boolean throwException)
         {
-            if (action != null && period != null && period.TotalSeconds > 0 && endTime.TotalSeconds != 0)
+            if (action != null && period.TotalSeconds > 0 && endTime.TotalSeconds != 0)
             {
                 try
                 {
-                    if (dueTime == null || dueTime.TotalSeconds < 0) dueTime = period;
+                    if (dueTime.TotalSeconds < 0) dueTime = period;
                     System.Threading.Timer timer = new System.Threading.Timer((objNull) => { action.Invoke(); }, null, dueTime, period);
                     if (endTime.TotalSeconds > 0) await RunTaskTimingAsync(() => { timer.Dispose(); }, endTime, null, throwException);
                 }
                 catch (Exception ex)
                 {
-                    if (throwException) throw ex;
+                    if (throwException)
+                        throw;
                 }
             }
         }
