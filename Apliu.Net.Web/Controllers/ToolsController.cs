@@ -119,7 +119,7 @@ namespace Apliu.Net.Web.Controllers
             sql = sql.Trim();
             if (string.IsNullOrEmpty(sql)) return result.ToString();
 
-            string databaseType = "SqlServer";
+            string databaseType = "Mysql";
             #region 考虑到外部调用API接口会导致DataAccess对象越来越多，而占用过多内存，改成创建临时DataAccess对象进行服务
             //string ip = HYRequest.GetIP();//以客户端IP作为Key，避免重复加载数据库链接对象
             //string key = SecurityHelper.MD5Encrypt(ip, System.Text.Encoding.UTF8);
@@ -462,6 +462,6 @@ namespace Apliu.Net.Web.Controllers
             }
 
             return result.ToString();
-        };
+        }
     }
 }
